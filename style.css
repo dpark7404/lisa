@@ -70,6 +70,8 @@ p {
 /* Mobile styles */
 @media (max-width: 600px) {
   .image-grid {
+    margin-left: auto;
+    margin-right: auto;
     /* Keep at least 2 columns on small screens like iPhones */
     grid-template-columns: repeat(2, 1fr);
     gap: 0.8rem;
