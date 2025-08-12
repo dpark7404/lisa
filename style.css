@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  font-family: 'Dancing Script', cursive;
+  background: #fff9f9;
+  color: #333;
+}
+
+section.panel {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+img {
+  max-width: 80%;
+  border-radius: 20px;
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+p {
+  font-size: 2rem;
+  max-width: 600px;
+  text-align: center;
+  margin-top: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.2rem;
+  width: 85%;
+}
+
+/* Scrapbook style */
+.image-grid.scrapbook img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateY(40px) rotate(calc(var(--rotate) * 1deg));
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Give each image a different angle like it's taped in */
+.image-grid.scrapbook img:nth-child(1) { --rotate: -2; }
+.image-grid.scrapbook img:nth-child(2) { --rotate: 1.5; }
+.image-grid.scrapbook img:nth-child(3) { --rotate: -1; }
+.image-grid.scrapbook img:nth-child(4) { --rotate: 2; }
+
+/* Fade in effect still works when JS adds .visible */
+.fade-in.visible {
+  opacity: 1 !important;
+  transform: rotate(calc(var(--rotate) * 1deg)) translateY(0) !important;
+}
