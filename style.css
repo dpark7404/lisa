@@ -69,28 +69,10 @@ p {
 
 /* Mobile styles */
 @media (max-width: 600px) {
-  section.panel {
-    padding: 1rem;
-  }
-
-  p {
-    font-size: 1.3rem;
-    max-width: 90%;
-    line-height: 1.5;
-  }
-
-  img, .image-grid {
-    max-width: 100%;
-    width: 100%;
-  }
-
   .image-grid {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    /* Keep at least 2 columns on small screens like iPhones */
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.8rem;
   }
-
-  .final-message {
-    font-size: 2rem;
-    padding: 1rem;
-  }
 }
+
