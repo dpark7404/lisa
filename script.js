@@ -17,3 +17,12 @@ const appearOnScroll = new IntersectionObserver(function(entries) {
 faders.forEach(fader => {
   appearOnScroll.observe(fader);
 });
+
+
+// Calculate days since April 20, 2024
+const startDate = new Date("2025-04-20");
+const today = new Date();
+const daysDiff = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+
+// Set the days in HTML
+document.getElementById("days-count").textContent = daysDiff;
